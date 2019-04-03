@@ -10,14 +10,7 @@ module "consul_sofia" {
   client_count  = "${var.client_count}"
   server_count  = "${var.server_count}"
   dc_net        = "${var.dc_net["dc1"]}"
-}
-
-output "public_dns_servers_sofia" {
-  value = "${module.consul_sofia.public_dns_servers}"
-}
-
-output "public_dns_clients_sofia" {
-  value = "${module.consul_sofia.public_dns_clients}"
+  dcname        = "${var.dcname["dc1"]}"
 }
 
 module "consul_varna" {
@@ -32,6 +25,15 @@ module "consul_varna" {
   client_count  = "${var.client_count}"
   server_count  = "${var.server_count}"
   dc_net        = "${var.dc_net["dc2"]}"
+  dcname        = "${var.dcname["dc2"]}"
+}
+
+output "public_dns_servers_sofia" {
+  value = "${module.consul_sofia.public_dns_servers}"
+}
+
+output "public_dns_clients_sofia" {
+  value = "${module.consul_sofia.public_dns_clients}"
 }
 
 output "public_dns_servers_varna" {

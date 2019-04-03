@@ -22,6 +22,10 @@ instance_type = ""
 subnet = "< VPC subnet ID >"
 client_count = 1
 server_count = 1
+dcname = {
+    dc1 = "< dc name >"
+    dc2 = "< dc name >"
+  }
 subnet = [
     "< Your AWS subnet >",
     "< Your AWS subnet >"
